@@ -14,7 +14,7 @@ struct Profile:Codable {
     var age:Int
     var gender:String
     var hobbies:[String]?
-    var image:String
+    var imagePath:String
     var name:String
 }
 
@@ -24,10 +24,10 @@ extension Profile {
         if let profileDict = element as? [String:Any],
             let age = profileDict["age"] as? Int,
             let gender = profileDict["gender"] as? String,
-            let image = profileDict["image"] as? String,
+            let imagePath = profileDict["imagePath"] as? String,
             let name = profileDict["name"] as? String {
             let hobbies = profileDict["hobbies"] as? [String]
-            return Profile(id: id, age: age, gender: gender, hobbies: hobbies, image: image, name: name)
+            return Profile(id: id, age: age, gender: gender, hobbies: hobbies, imagePath: imagePath, name: name)
         }
         return nil
     }

@@ -18,6 +18,7 @@
 		AA5D6AAF20C2E5850018DCF3 /* FunctionalLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5D6AAE20C2E5850018DCF3 /* FunctionalLibrary.swift */; };
 		AA5D6AB120C2E69E0018DCF3 /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5D6AB020C2E69E0018DCF3 /* GenderViewController.swift */; };
 		AA5D6AB420C2F1ED0018DCF3 /* EditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5D6AB220C2F1EC0018DCF3 /* EditCell.swift */; };
+		AA5D6AB920C441540018DCF3 /* ImageUploadDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5D6AB820C441540018DCF3 /* ImageUploadDownload.swift */; };
 		B91ADC0E17A198D2763F3A90 /* Pods_HobbyList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2CA66B52612486351F8089C /* Pods_HobbyList.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		AA5D6AAE20C2E5850018DCF3 /* FunctionalLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalLibrary.swift; sourceTree = "<group>"; };
 		AA5D6AB020C2E69E0018DCF3 /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		AA5D6AB220C2F1EC0018DCF3 /* EditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCell.swift; sourceTree = "<group>"; };
+		AA5D6AB820C441540018DCF3 /* ImageUploadDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadDownload.swift; sourceTree = "<group>"; };
 		C2CA66B52612486351F8089C /* Pods_HobbyList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HobbyList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 				AA3126A520BF0AF2005C7B5E /* LaunchScreen.storyboard */,
 				AA3126AE20BF0FC1005C7B5E /* GoogleService-Info.plist */,
 				AA3126A820BF0AF2005C7B5E /* Info.plist */,
+				AA5D6AB820C441540018DCF3 /* ImageUploadDownload.swift */,
 			);
 			path = HobbyList;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				AA5D6AAF20C2E5850018DCF3 /* FunctionalLibrary.swift in Sources */,
 				AA5D6AB120C2E69E0018DCF3 /* GenderViewController.swift in Sources */,
 				AA5D6AB420C2F1ED0018DCF3 /* EditCell.swift in Sources */,
+				AA5D6AB920C441540018DCF3 /* ImageUploadDownload.swift in Sources */,
 				AA31269D20BF0AEF005C7B5E /* MasterViewController.swift in Sources */,
 				AA31269B20BF0AEF005C7B5E /* AppDelegate.swift in Sources */,
 			);

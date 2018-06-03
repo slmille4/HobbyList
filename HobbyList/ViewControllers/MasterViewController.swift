@@ -75,7 +75,7 @@ final class MasterViewController: UITableViewController {
     }
     
     @IBAction func insertNewObject(_ sender: Any) {
-        rootReference.child("profiles").childByAutoId().setValue(["age": 0, "gender": "", "hobbies": [], "image": "", "name": ""]){
+        rootReference.child("profiles").childByAutoId().setValue(["age": 0, "gender": "", "hobbies": [], "imagePath": "", "name": ""]){
             (error:Error?, ref:DatabaseReference) in
             if let error = error {
                 print("Data could not be saved: \(error).")

@@ -9,25 +9,47 @@
 import UIKit
 import Firebase
 
-final class ProfileViewController: UITableViewController, UITextFieldDelegate {
+final class ProfileViewController: UITableViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
+    @IBOutlet var profileImageView: UIImageView!
     var profileReference: DatabaseReference?
     var profileDict:[String:Any]?
     var hobbies:[String] = [""]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.profileImageView.layer.cornerRadius = self.profileImageView.bounds.width/2
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapProfileImage))
+        profileImageView.addGestureRecognizer(tapGesture)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         profileReference?.observe(.value, with: { snapshot in
-            self.profileDict = snapshot.value as? [String:Any]
-            if let hobbies = self.profileDict?["hobbies"] as? [String] {
+            guard let profileDict = snapshot.value as? [String:Any] else { return }
+            self.profileDict = profileDict
+            if let hobbies = profileDict["hobbies"] as? [String] {
                 self.hobbies = hobbies
             }
             if !self.isEditing {
+                if let imageName = profileDict["imagePath"] as? String {
+                    downloadImage(urlString: imageName) { image in
+                        self.profileImageView.image = image
+                    }
+                }
                 self.tableView.reloadData()
             }
         })
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        if editing {
+            profileImageView.layer.borderWidth = 1
+            profileImageView.layer.borderColor = UIColor.green.cgColor
+            profileImageView.isUserInteractionEnabled = true
+        } else {
+            profileImageView.layer.borderWidth = 0
+            profileImageView.isUserInteractionEnabled = false
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -93,7 +115,7 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = editCellForRowAt(indexPath)
+        let cell:UITableViewCell = editCellForRowAt(indexPath)
         return cell
     }
     
@@ -131,15 +153,15 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate {
             
             tv.beginUpdates()
             tv.insertRows(at:
-                [IndexPath(row:ct-1, section:1)],
+                [IndexPath(row:ct-1, section:3)],
                           with:.automatic)
             tv.reloadRows(at:
-                [IndexPath(row:ct-2, section:1)],
+                [IndexPath(row:ct-2, section:3)],
                           with:.automatic)
             tv.endUpdates()
             // crucial that this next bit be *outside* the updates block
             let cell = self.tableView.cellForRow(at:
-                IndexPath(row:ct-1, section:1))
+                IndexPath(row:ct-1, section:3))
             (cell as! EditCell).textField.becomeFirstResponder()
         }
         if editingStyle == .delete {
@@ -176,5 +198,53 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate {
             }
         }))
         self.present(actionSheet, animated: true)
+    }
+    
+    
+    
+//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+//        print("wat")
+//        return true
+//    }
+    
+    @objc func tapProfileImage(_ sender: UITapGestureRecognizer) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        
+        present(picker, animated: true, completion: nil)
+    }
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        var selectedImageFromPicker: UIImage?
+        
+        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            selectedImageFromPicker = editedImage
+        } else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            selectedImageFromPicker = originalImage
+        }
+        
+        if let image = selectedImageFromPicker {
+            picker.dismiss(animated: true, completion: nil)
+            self.profileImageView.image = image
+            uploadImage(image, progressBlock: { (percentage) in
+                print(percentage)
+            }, completionBlock: { [weak self] (fileURL, errorMessage) in
+                guard let strongSelf = self, let absoluteString = fileURL?.absoluteString else {
+                    return
+                }
+                print(fileURL ?? "")
+                print(errorMessage ?? "")
+                
+                strongSelf.profileReference?.child("imagePath").setValue(absoluteString)
+            })
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("canceled picker")
+        dismiss(animated: true, completion: nil)
     }
 }
