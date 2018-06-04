@@ -234,10 +234,10 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             self.navigationController?.pushScreen(screen: genderViewController()){ (gender) in
-                self.profileReference?.child("gender").setValue(gender){ _,_ in
+                self.profileReference?.child("gender").setValue(gender)/*{ _,_ in
                     self.profileDict!["gender"] = gender
-                    //self.tableView.reloadRows(at: [IndexPath(row:0, section:1)], with:.automatic)
-                }
+                    self.tableView.reloadRows(at: [IndexPath(row:0, section:1)], with:.automatic)
+                }*/
             }
         }
     }
@@ -246,6 +246,10 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         actionSheet.addAction(UIAlertAction(title: "Delete Profile", style: .destructive, handler: { _ in
+            if let imagePath = self.profileDict?["imagePath"] as? String {
+                let storageRef = Storage.storage().reference(forURL: imagePath)
+                storageRef.delete()
+            }
             self.profileReference?.removeValue()
             self.popViewController()
         }))
@@ -255,13 +259,6 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
         }
         self.present(actionSheet, animated: true)
     }
-    
-    
-    
-//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-//        print("wat")
-//        return true
-//    }
     
     @objc func tapProfileImage(_ sender: UITapGestureRecognizer) {
         let picker = UIImagePickerController()
