@@ -9,37 +9,69 @@
 import UIKit
 import Firebase
 
+extension Dictionary where Value: Any {
+    func isEqual(to otherDict: [Key: Any]) -> Bool {
+        guard self.count == otherDict.count else { return false }
+        for (k1,v1) in self {
+            guard let v2 = otherDict[k1] else { return false }
+            switch (v1, v2) {
+            case (let v1 as [String], let v2 as [String]) : if !(v1==v2) { return false }
+            case (let v1 as Int, let v2 as Int) : if !(v1==v2) { return false }
+            case (let v1 as String, let v2 as String): if !(v1==v2) { return false }
+            default: return false
+            }
+        }
+        return true
+    }
+}
+
 final class ProfileViewController: UITableViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     @IBOutlet var profileImageView: UIImageView!
+    @IBOutlet var deleteProfileView: UIView!
     var profileReference: DatabaseReference?
-    var profileDict:[String:Any]?
-    var hobbies:[String] = [""]
+    var profileDict:[String:Any]? = nil
+//    var hobbies:[String] = [""]
+//    var needsReload = true
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.profileImageView.layer.cornerRadius = self.profileImageView.bounds.width/2
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapProfileImage))
         profileImageView.addGestureRecognizer(tapGesture)
+        observeProfile()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        profileReference?.observe(.value, with: { snapshot in
-            guard let profileDict = snapshot.value as? [String:Any] else { return }
-            self.profileDict = profileDict
-            if let hobbies = profileDict["hobbies"] as? [String] {
-                self.hobbies = hobbies
+//    override func viewDidAppear(_ animated: Bool) {
+    func observeProfile() {
+        guard let profileReference = profileReference else {
+            self.deleteProfileView.isHidden = true
+            return
+        }
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        profileReference.observe(.value, with: { snapshot in
+            let oldProfileDict = self.profileDict
+            guard let newProfileDict = snapshot.value as? [String:Any] else {
+                self.profileDict = nil
+                self.tableView.reloadData()
+                self.popViewController()
+                return
             }
-            if !self.isEditing {
-                if let imageName = profileDict["imagePath"] as? String {
-                    downloadImage(urlString: imageName) { image in
+            
+            self.profileDict = newProfileDict
+            if let newImagePath = newProfileDict["imagePath"] as? String{
+                let oldImagePath = oldProfileDict?["imagePath"] as? String
+                if oldImagePath != newImagePath {
+                    downloadImage(urlString: newImagePath) { image in
                         self.profileImageView.image = image
                     }
                 }
+            }
+            if oldProfileDict == nil || !oldProfileDict!.isEqual(to: newProfileDict) {
                 self.tableView.reloadData()
             }
+            
         })
     }
-    
+
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         if editing {
@@ -52,7 +84,8 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    //override func viewWillDisappear(_ animated: Bool) {
+    deinit {
         profileReference?.removeAllObservers()
     }
     
@@ -85,12 +118,26 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
         }
     }
     
+    var hobbies:[String] {
+        get {
+            return profileDict?["hobbies"] as? [String] ?? []
+        }
+        set {
+            profileDict?["hobbies"] = newValue
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 3 {
             return hobbies.count
         } else {
             return 1
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if indexPath.section == 1 { return indexPath }//Only select gender section
+        else { return nil }
     }
     
     func editCellForRowAt(_ indexPath: IndexPath) -> UITableViewCell {
@@ -104,9 +151,10 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
             cell.textField.text = self.profileDict?["gender"] as? String ?? ""
             cell.textField.isUserInteractionEnabled = false
         case 2:
-            cell.textField.text = "\(self.profileDict?["age"] ?? "")"
+            cell.textField.text = self.profileDict?["age"] as? String ?? ""
+            cell.textField.keyboardType = .numberPad
         case 3:
-            cell.textField.text = self.hobbies[indexPath.row]
+            cell.textField.text = hobbies[indexPath.row]
         //cell.textField.keyboardType = .numbersAndPunctuation
         default: break
         }
@@ -137,7 +185,7 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
         if ip.section == 0 {
             profileReference?.child("name").setValue(cell.textField.text!)
         } else if ip.section == 2 {
-            profileReference?.child("age").setValue(Int(cell.textField.text!))
+            profileReference?.child("age").setValue(Int(cell.textField.text!)?.description ?? "")
         } else if ip.section == 3 {
             profileReference?.child("hobbies").child(ip.row.description).setValue(cell.textField.text!)
         }
@@ -177,12 +225,18 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
         }
     }
     
+    func popViewController() {
+        if let navController = self.splitViewController?.viewControllers[0] as? UINavigationController {
+            navController.popViewController(animated: true)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             self.navigationController?.pushScreen(screen: genderViewController()){ (gender) in
                 self.profileReference?.child("gender").setValue(gender){ _,_ in
                     self.profileDict!["gender"] = gender
-                    self.tableView.reloadRows(at: [IndexPath(row:0, section:1)], with:.automatic)
+                    //self.tableView.reloadRows(at: [IndexPath(row:0, section:1)], with:.automatic)
                 }
             }
         }
@@ -193,10 +247,12 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         actionSheet.addAction(UIAlertAction(title: "Delete Profile", style: .destructive, handler: { _ in
             self.profileReference?.removeValue()
-            if let navController = self.splitViewController?.viewControllers[0] as? UINavigationController {
-                navController.popViewController(animated: true)
-            }
+            self.popViewController()
         }))
+        
+        if let popoverController = actionSheet.popoverPresentationController {
+            popoverController.sourceView = sender
+        }
         self.present(actionSheet, animated: true)
     }
     

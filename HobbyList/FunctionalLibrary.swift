@@ -16,11 +16,6 @@ public struct Screen<A> {
         self.build = build
     }
     
-//    public init(_ navigationItem: NavigationItem, _ build: @escaping ((A) -> ()) -> UIViewController) {
-//        self.build = build
-//        self.navigationItem = navigationItem
-//    }
-    
     public func run(f: @escaping (A) -> ()) -> UIViewController {
         let vc = build(f)
 //        vc.applyNavigationItem(navigationItem: navigationItem)
@@ -52,20 +47,20 @@ extension UINavigationController {
     }
 }
 
-extension UIViewController {
-    public func presentModal<A>(screen: NavigationController<A>, /*cancellable: Bool, */callback: @escaping (A) -> ()) {
-        let vc = screen.build { [unowned self] x, nc in
-            callback(x)
-            self.dismiss(animated: true, completion: nil)
-        }
-        vc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-//        if cancellable {
-//            let cancelButton = BarButton(title: BarButtonTitle.SystemItem(UIBarButtonSystemItem.cancel), callback: { _ in
-//                self.dismiss(animated: true, completion: nil)
-//            })
-//            let rootVC = vc.viewControllers[0] as UIViewController
-//            rootVC.setLeftBarButton(barButton: cancelButton)
+//extension UIViewController {
+//    public func presentModal<A>(screen: NavigationController<A>, /*cancellable: Bool, */callback: @escaping (A) -> ()) {
+//        let vc = screen.build { [unowned self] x, nc in
+//            callback(x)
+//            self.dismiss(animated: true, completion: nil)
 //        }
-        present(vc, animated: true, completion: nil)
-    }
-}
+//        vc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+////        if cancellable {
+////            let cancelButton = BarButton(title: BarButtonTitle.SystemItem(UIBarButtonSystemItem.cancel), callback: { _ in
+////                self.dismiss(animated: true, completion: nil)
+////            })
+////            let rootVC = vc.viewControllers[0] as UIViewController
+////            rootVC.setLeftBarButton(barButton: cancelButton)
+////        }
+//        present(vc, animated: true, completion: nil)
+//    }
+//}

@@ -11,7 +11,7 @@ import Firebase
 
 struct Profile:Codable {
     let id:String
-    var age:Int
+    var age:String
     var gender:String
     var hobbies:[String]?
     var imagePath:String
@@ -22,7 +22,7 @@ extension Profile {
     static func parse(index:String, element:Any) -> Profile? {
         let id = index
         if let profileDict = element as? [String:Any],
-            let age = profileDict["age"] as? Int,
+            let age = profileDict["age"] as? String,
             let gender = profileDict["gender"] as? String,
             let imagePath = profileDict["imagePath"] as? String,
             let name = profileDict["name"] as? String {

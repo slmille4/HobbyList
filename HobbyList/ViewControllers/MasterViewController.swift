@@ -31,10 +31,10 @@ final class MasterViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.lightGray
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        var reloaded = false
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
         
@@ -42,10 +42,35 @@ final class MasterViewController: UITableViewController {
             if let values = snapshot.value as? [String:Any] {
                 self.profiles = values.compactMap(Profile.parse)
                 self.profiles?.sort(by: {$0.id < $1.id})
+                if self.selectedProfileReference == nil && self.profiles?.isEmpty == false {
+                    self.reloadMaybeSegue()
+                    reloaded = true
+                }
+            } else {
+                self.profiles = nil
+            }
+            if !reloaded {
                 self.tableView.reloadData()
             }
         })
-        //https://hobbylist-5e4a4.firebaseio.com/
+    }
+    
+    func reloadMaybeSegue() {
+        //just do nothing if this is an iPhone
+        guard UIDevice.current.userInterfaceIdiom == .pad else {
+            self.tableView.reloadData()
+            return
+        }
+        
+        //To select the first item after the table finishes loading
+        CATransaction.begin()
+        CATransaction.setCompletionBlock({
+            let initialIndexPath = IndexPath(row: 0, section: 0)
+            self.tableView.selectRow(at: initialIndexPath, animated: true, scrollPosition:UITableViewScrollPosition.none)
+            self.tableView(self.tableView, didSelectRowAt: initialIndexPath)
+        })
+        self.tableView.reloadData()
+        CATransaction.commit()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -75,7 +100,7 @@ final class MasterViewController: UITableViewController {
     }
     
     @IBAction func insertNewObject(_ sender: Any) {
-        rootReference.child("profiles").childByAutoId().setValue(["age": 0, "gender": "", "hobbies": [], "imagePath": "", "name": ""]){
+        rootReference.child("profiles").childByAutoId().setValue(["age": "", "gender": "", "hobbies": [""], "imagePath": "", "name": ""]){
             (error:Error?, ref:DatabaseReference) in
             if let error = error {
                 print("Data could not be saved: \(error).")
@@ -97,6 +122,9 @@ final class MasterViewController: UITableViewController {
         actionSheet.addAction(UIAlertAction(title: title, style: .default, handler: sortAge))
         title = "Sort by Name - " + (sortNameAscending ? "Descending" : "Ascending")
         actionSheet.addAction(UIAlertAction(title: title, style: .default, handler: sortName))
+        if let popoverController = actionSheet.popoverPresentationController {
+            popoverController.barButtonItem = sender
+        }
         self.present(actionSheet, animated: true)
     }
     
