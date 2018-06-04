@@ -109,10 +109,6 @@ final class MasterViewController: UITableViewController {
                 self.performSegue(withIdentifier: "showDetail" , sender: nil)
             }
         }
-        //profiles?.insert(Profile(), at: 0)
-        //let indexPath = IndexPath(row: 0, section: 0)
-        //tableView.insertRows(at: [indexPath], with: .automatic)
-        
     }
 
     @IBAction func sortAction(_ sender: UIBarButtonItem) {
@@ -181,19 +177,5 @@ final class MasterViewController: UITableViewController {
         }
         return cell
     }
-
-//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        // Return false if you do not want the specified item to be editable.
-//        return true
-//    }
-//
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            //profiles.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        } else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//        }
-//    }
 }
 

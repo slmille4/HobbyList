@@ -30,8 +30,7 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
     @IBOutlet var deleteProfileView: UIView!
     var profileReference: DatabaseReference?
     var profileDict:[String:Any]? = nil
-//    var hobbies:[String] = [""]
-//    var needsReload = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.profileImageView.layer.cornerRadius = self.profileImageView.bounds.width/2
@@ -40,7 +39,6 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
         observeProfile()
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
     func observeProfile() {
         guard let profileReference = profileReference else {
             self.deleteProfileView.isHidden = true
@@ -84,7 +82,6 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
         }
     }
     
-    //override func viewWillDisappear(_ animated: Bool) {
     deinit {
         profileReference?.removeAllObservers()
     }
@@ -155,7 +152,6 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
             cell.textField.keyboardType = .numberPad
         case 3:
             cell.textField.text = hobbies[indexPath.row]
-        //cell.textField.keyboardType = .numbersAndPunctuation
         default: break
         }
         cell.textField.delegate = self
@@ -176,9 +172,6 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
         // some cell's text field has finished editing; which cell?
         var v : UIView = textField
         repeat { v = v.superview! } while !(v is UITableViewCell)
-        // another way to say:
-        //        var v : UIView
-        //        for v = textField; !(v is UITableViewCell); v = v.superview! {}
         let cell = v as! EditCell
         // update data model to match
         let ip = self.tableView.indexPath(for:cell)!
