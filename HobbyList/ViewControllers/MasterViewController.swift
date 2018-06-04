@@ -118,10 +118,17 @@ final class MasterViewController: UITableViewController {
         actionSheet.addAction(UIAlertAction(title: title, style: .default, handler: sortAge))
         title = "Sort by Name - " + (sortNameAscending ? "Descending" : "Ascending")
         actionSheet.addAction(UIAlertAction(title: title, style: .default, handler: sortName))
+        title = "Reset"
+        actionSheet.addAction(UIAlertAction(title: title, style: .default, handler: sortID))
         if let popoverController = actionSheet.popoverPresentationController {
             popoverController.barButtonItem = sender
         }
         self.present(actionSheet, animated: true)
+    }
+    
+    func sortID(_ action:UIAlertAction) {
+        profiles?.sort(by: {$0.id < $1.id})
+        tableView.reloadData()
     }
     
     func sortAge(_ action:UIAlertAction) {
