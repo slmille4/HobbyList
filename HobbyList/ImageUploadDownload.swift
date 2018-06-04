@@ -27,8 +27,7 @@ func downloadImage(urlString:String, completion:@escaping (UIImage)->()) {
 
 func uploadImage(_ image: UIImage, progressBlock: @escaping (_ percentage: Double) -> Void, completionBlock: @escaping (_ url: URL?, _ errorMessage: String?) -> Void) {
     let imageName = NSUUID().uuidString
-    let storageRef = Storage.storage().reference().child("profile_images").child("\(imageName).png")
-    
+    let storageRef = Storage.storage().reference().child("profile_images/\(imageName).png")
     if let imageData = UIImageJPEGRepresentation(image, 0.8) {
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"

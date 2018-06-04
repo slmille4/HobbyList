@@ -180,7 +180,7 @@ final class MasterViewController: UITableViewController {
         } else if profile.gender=="Female" {
             cell.backgroundColor = UIColor.init(red: 255/255, green: 182/255, blue: 193/255, alpha: 0.5)
         } else {
-            cell.backgroundColor = nil
+            cell.backgroundColor = UIColor.init(red: 225/255, green: 225/255, blue: 225/255, alpha: 0.5)
         }
         return cell
     }

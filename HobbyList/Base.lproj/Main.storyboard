@@ -142,7 +142,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="768" height="151"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
-                                <imageView autoresizesSubviews="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfile" translatesAutoresizingMaskIntoConstraints="NO" id="cMg-iY-L0k">
+                                <imageView autoresizesSubviews="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cMg-iY-L0k">
                                     <rect key="frame" x="308.5" y="0.0" width="151" height="151"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="cMg-iY-L0k" secondAttribute="height" multiplier="1:1" id="Yz8-6s-0cs"/>
@@ -276,9 +276,6 @@
             <point key="canvasLocation" x="1659" y="329"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="defaultProfile" width="75" height="75"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="uci-3D-YKe"/>
     </inferredMetricsTieBreakers>

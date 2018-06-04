@@ -49,6 +49,7 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
             let oldProfileDict = self.profileDict
             guard let newProfileDict = snapshot.value as? [String:Any] else {
                 self.profileDict = nil
+                self.profileImageView.image = nil
                 self.tableView.reloadData()
                 self.popViewController()
                 return
@@ -58,8 +59,14 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
             if let newImagePath = newProfileDict["imagePath"] as? String{
                 let oldImagePath = oldProfileDict?["imagePath"] as? String
                 if oldImagePath != newImagePath {
-                    downloadImage(urlString: newImagePath) { image in
-                        self.profileImageView.image = image
+                    if newImagePath.isEmpty {
+                        self.profileImageView.image = #imageLiteral(resourceName: "defaultProfile")
+                    } else {
+                        downloadImage(urlString: newImagePath) { image in
+                            if self.profileDict != nil {
+                                self.profileImageView.image = image
+                            }
+                        }
                     }
                 }
             }
@@ -239,7 +246,8 @@ final class ProfileViewController: UITableViewController, UITextFieldDelegate, U
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         actionSheet.addAction(UIAlertAction(title: "Delete Profile", style: .destructive, handler: { _ in
-            if let imagePath = self.profileDict?["imagePath"] as? String {
+            self.setEditing(false, animated: false)
+            if let imagePath = self.profileDict?["imagePath"] as? String, !imagePath.isEmpty {
                 let storageRef = Storage.storage().reference(forURL: imagePath)
                 storageRef.delete()
             }
@@ -281,10 +289,12 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
                 guard let strongSelf = self, let absoluteString = fileURL?.absoluteString else {
                     return
                 }
-                print(fileURL ?? "")
-                print(errorMessage ?? "")
-                
-                strongSelf.profileReference?.child("imagePath").setValue(absoluteString)
+                if strongSelf.profileDict != nil {
+                    strongSelf.profileReference?.child("imagePath").setValue(absoluteString)
+                } else {
+                    let storageRef = Storage.storage().reference(forURL: absoluteString)
+                    storageRef.delete()
+                }
             })
         }
     }

@@ -167,7 +167,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/Model/Profile.swift"
-            timestampString = "549817154.08102"
+            timestampString = "549818832.74805"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -423,7 +423,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/Model/Profile.swift"
-            timestampString = "549817154.0826679"
+            timestampString = "549818832.749808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -471,13 +471,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.00658"
+            timestampString = "549820926.7287281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "tableView(_:editingStyleForRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "ProfileViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -487,11 +487,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.006671"
+            timestampString = "549820926.729206"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
             landmarkName = "tableView(_:commit:forRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -503,11 +503,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.006741"
+            timestampString = "549820926.72948"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -519,13 +519,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.006806"
+            timestampString = "549820926.729743"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "tableView(_:commit:forRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "ProfileViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -535,11 +535,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.006873"
+            timestampString = "549820926.730002"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -551,11 +551,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.00694"
+            timestampString = "549820926.730274"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "editCellForRowAt(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -567,13 +567,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.007005"
+            timestampString = "549820926.730533"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
-            landmarkName = "tapProfileImage(_:)"
-            landmarkType = "7">
+            startingLineNumber = "263"
+            endingLineNumber = "263"
+            landmarkName = "ProfileViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -583,11 +583,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.007071"
+            timestampString = "549820926.730788"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -599,7 +599,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ImageUploadDownload.swift"
-            timestampString = "549816308.0535049"
+            timestampString = "549819947.699483"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
@@ -615,7 +615,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ImageUploadDownload.swift"
-            timestampString = "549816308.053555"
+            timestampString = "549819947.699536"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -631,7 +631,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ImageUploadDownload.swift"
-            timestampString = "549816308.053602"
+            timestampString = "549819947.699617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -647,11 +647,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.0074919"
+            timestampString = "549820926.7313631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "tableView(_:commit:forRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -663,7 +663,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/MasterViewController.swift"
-            timestampString = "549817154.084486"
+            timestampString = "549821147.105198"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
@@ -679,7 +679,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/MasterViewController.swift"
-            timestampString = "549817154.0848041"
+            timestampString = "549821147.105572"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "159"
@@ -695,7 +695,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/MasterViewController.swift"
-            timestampString = "549817154.085055"
+            timestampString = "549821147.105823"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -711,7 +711,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.007731"
+            timestampString = "549820926.7319109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -727,12 +727,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.007796"
+            timestampString = "549820926.732183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "deinit"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "setEditing(_:animated:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -743,7 +743,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.007861"
+            timestampString = "549820926.7324491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -759,7 +759,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.007926"
+            timestampString = "549820926.7327141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -807,11 +807,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.00799"
+            timestampString = "549820926.73297"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "observeProfile()"
             landmarkType = "7">
          </BreakpointContent>
@@ -823,11 +823,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.0080529"
+            timestampString = "549820926.73323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "setEditing(_:animated:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -839,13 +839,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.008118"
+            timestampString = "549820926.733548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "setEditing(_:animated:)"
-            landmarkType = "7">
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "ProfileViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -855,7 +855,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.008183"
+            timestampString = "549820926.733959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -871,7 +871,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/MasterViewController.swift"
-            timestampString = "549817154.086197"
+            timestampString = "549821147.10684"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -887,7 +887,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/MasterViewController.swift"
-            timestampString = "549817154.086427"
+            timestampString = "549821147.107077"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -903,11 +903,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.008358"
+            timestampString = "549820926.734754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "observeProfile()"
             landmarkType = "7">
          </BreakpointContent>
@@ -919,11 +919,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.008418"
+            timestampString = "549820926.735294"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "observeProfile()"
             landmarkType = "7">
          </BreakpointContent>
@@ -935,11 +935,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.008478"
+            timestampString = "549820926.735743"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "observeProfile()"
             landmarkType = "7">
             <Locations>
@@ -983,11 +983,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.008535"
+            timestampString = "549820926.736176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -999,11 +999,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.008593"
+            timestampString = "549820926.7365969"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "observeProfile()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1011,16 +1011,176 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
-            timestampString = "549816555.008648"
+            timestampString = "549820926.7370549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
             landmarkName = "deleteProfile(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
+            timestampString = "549820926.737478"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "observeProfile()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HobbyList/ImageUploadDownload.swift"
+            timestampString = "549819947.7042"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "uploadImage(_:progressBlock:completionBlock:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HobbyList.uploadImage(__ObjC.UIImage, progressBlock: (Swift.Double) -&gt; (), completionBlock: (Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "HobbyList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Steve/HobbyList/HobbyList/ImageUploadDownload.swift"
+                  timestampString = "549818832.847612"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "892">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__ObjC.StorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in HobbyList.uploadImage(__ObjC.UIImage, progressBlock: (Swift.Double) -&gt; (), completionBlock: (Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "HobbyList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Steve/HobbyList/HobbyList/ImageUploadDownload.swift"
+                  timestampString = "549818832.849725"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "160">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HobbyList/ImageUploadDownload.swift"
+            timestampString = "549819947.704252"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "uploadImage(_:progressBlock:completionBlock:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HobbyList/ImageUploadDownload.swift"
+            timestampString = "549819947.704302"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "uploadImage(_:progressBlock:completionBlock:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
+            timestampString = "549820926.738409"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "deleteProfile(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
+            timestampString = "549820926.738858"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HobbyList/ViewControllers/ProfileViewController.swift"
+            timestampString = "549820926.739283"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HobbyList/ViewControllers/MasterViewController.swift"
+            timestampString = "549821147.108561"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
